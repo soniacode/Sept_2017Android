@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#ff9800</color>
+    <color name="primary_dark">#F57C00</color>
+    <color name="primary_darker">#FFFFFF</color>
+    <color name="accent">#FFFFFF</color>
+    <color name="primary_text">#FFFFFF</color>
+    <color name="secondary_text">#757575</color>
+    <color name="button_text">#E43F3F</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="color_white">#fefefe</color>
+    <color name="app_green">#45be89</color>
+    <color name="app_grey">#636363</color>
+    <color name="app_yellow">#f2dc45</color>
+    <color name="app_orange">#f29345</color>
+    <color name="app_red">#f15841</color>
+    <color name="app_pink">#f2b2a8</color>
+
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
+</resources>

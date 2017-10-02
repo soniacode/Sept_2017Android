@@ -2,11 +2,15 @@ package vidheya.vome.com.vome;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -26,9 +30,20 @@ public class VomeMainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
     public void initNavigationDrawer() {
 
-        NavigationView navigationView = (NavigationView)findViewById(R.id.navigation_view);
+        NavigationView navigationView = (NavigationView)findViewById(R.id.nav_view);
+        setFragment(new VomeTabFragment());
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
@@ -57,7 +72,7 @@ public class VomeMainActivity extends AppCompatActivity {
         View header = navigationView.getHeaderView(0);
         TextView tv_email = (TextView)header.findViewById(R.id.tv_email);
         tv_email.setText("raj.amalw@learn2crack.com");
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawer_open,R.string.drawer_close){
 
@@ -74,5 +89,17 @@ public class VomeMainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
     }
+
+
+    public void setFragment(Fragment fragment){
+        if(fragment!=null){
+            FragmentTransaction ft= getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main,fragment);
+            ft.commit();
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
 
 }

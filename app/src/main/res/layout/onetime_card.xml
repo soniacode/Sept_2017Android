@@ -1,6 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
 
-</LinearLayout>
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        card_view:elevation="14dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/eventflooring"></ImageView>
+
+            <TextView
+                android:id="@+id/heading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_image"
+                android:paddingLeft="10dp"
+                android:gravity="left"
+                android:text="FUNDRAISER EVENT SET-UP"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_heading"></TextView>
+
+            <Button
+                android:id="@+id/book_button"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:textSize="@dimen/text_detail"
+                android:layout_toRightOf="@+id/heading_text"
+                android:background="@color/app_green"
+                android:text="BOOK"/>
+
+            <TextView
+                android:id="@+id/spot_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Only 4 spots left"
+                android:paddingLeft="10dp"
+                android:layout_gravity="start"
+                android:layout_below="@+id/book_button"
+                android:layout_alignLeft="@+id/book_button"
+                android:textSize="@dimen/text_detail"
+                android:textColor="@color/app_red"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/place_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Montreal,Canada"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/heading_text"
+                android:layout_toRightOf="@+id/iv_image"
+                android:textStyle="italic"
+                android:textColor="@color/app_grey"
+                android:textSize="@dimen/text_detail"
+                android:layout_toEndOf="@+id/iv_image"></TextView>
+
+            <TextView
+                android:id="@+id/calender_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chose Another Day"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/place_text"
+                android:layout_toRightOf="@+id/iv_image"
+                android:textColor="@color/app_grey"
+                android:textSize="@dimen/text_detail"
+                android:layout_toEndOf="@+id/iv_image"></TextView>
+
+            <ImageView
+                android:id="@+id/calender_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:scaleType="fitXY"
+                android:paddingLeft="10dp"
+                android:layout_toRightOf="@+id/calender_text"
+                android:layout_below="@+id/place_text"
+                android:layout_centerHorizontal="@+id/calender_text"
+                android:src="@drawable/icon_calendar"></ImageView>
+
+            <TextView
+                android:id="@+id/detail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to CanadaFest 2017. January 28th,29th 2017, Hollywood Beach will host once more the popular CanadaFest."
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/calender_image"
+                android:layout_toRightOf="@+id/iv_image"
+                android:textColor="@color/app_grey"
+                android:textSize="@dimen/text_detail"></TextView>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>
